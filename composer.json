@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mailjet/mailjet-apiv3-php": "^1.5"
+    }
+}

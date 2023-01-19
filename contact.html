@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Password Generator</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Insertion des styles CSS -->
+    <link href="style/style_contact.css" rel="stylesheet">
+    <!-- logo fav-icon -->
+    <link rel="icon" type="image" href="./image/fav_icon.png" />
+
+    <!-- Menu haut de page -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Connexion</a></li>
+            <li><a href="./generateur.html">Generateur</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!--img src="./image/logo_site.png"-->
+</head>
+    <body>
+        <!-- Formulaire de contact -->
+        <h1>Nous contacter</h1>
+        <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous :</p>
+        <form action="script_envoie.php" method="post">
+            <div class="form-container">
+                <label for="name" style="margin-left:2%;">Nom :</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email" style="margin-left:2%;">Email :</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message" style="margin-left:2%;">Message :</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br>
+                <input type="submit" name="envoyer" value="envoyer"> 
+            </div>
+        </form>
+    </body>
+    <!--bas de page (contenant informations sur le créateur)-->
+    <footer>
+        <div class="container">
+          <p>Copyright &copy; 2022 ThismaDuHood</p>
+          <ul>
+            <li><a href="./mention_legale.html#mention_l">Mentions légales</a></li>
+            <li><a href="./mention_legale.html#conditions_u">Conditions d'utilisation</a></li>
+            <li><a href="./mention_legale.html#politique_c">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+    </footer>   
+</html>

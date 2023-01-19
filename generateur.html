@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Password Generator</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Insertion des styles CSS -->
+    <link href="style/style_generator.css" rel="stylesheet">
+    <!--logo fav-icon-->
+    <link rel="icon" type="image" href="./image/fav_icon.png" />
+    
+    <!-- Menu haut de page -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Connexion</a></li>
+            <li><a href="./generateur.html">Generateur</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!--img src="./image/logo_site.png"-->
+</head>
+    <!-- Page HTML-->
+    <body>
+        <!--Titre + description-->
+        <h1> Générer votre mot de passe sécurisé</h1>
+        <p> Ce générateur permet de créer des mots de passe aléatoirement et sécurisé.</p>
+        
+        <div class="generation-container">
+        <!--div contenue la zone d'affichage password + bouton de génération-->
+            <div class="affichage">
+                <input class="inputPassword" id = "nouveauPassword"/>
+                <button class="boutonGen" onclick="generateur()">Generer</button>
+            </div>
+            
+            <!-- conteneur de configuration-->
+            <div class="config-container">
+                <div class="style-range">
+                    <input type="range" id="taille" name="seuil"
+                        min="10" max="25">
+                    <label for="seuil">N° de lettre </label>
+                </div>
+                <div class="style-textAa">
+                    <input type="checkbox" id="min">
+                    <label for="lowercase">Lettre minuscule</label></br>
+            
+                    <input type="checkbox" id="maj">
+                    <label for="uppercase">Lettre majuscule</label> 
+                </div>
+                <div class ="style-textCaract">
+                    <input type="checkbox" id="chiffre">
+                    <label for="numbers">Chiffre</label></br>
+            
+                    <input type="checkbox" id="symbole">
+                    <label for="symbols">Symbole</label>
+                </div>
+                <div class="bouton-container">
+                    <button id="boutonGenDef" onclick="parDefaut()">Génération automatique</button>
+                    <button id="boutonCopier" onclick="copie()">Copier le mot de passe</button>
+                </div>
+            </div>
+        </div>
+        <script src='./script_generateur.js'></script>
+    </body>
+    <!--bas de page (contenant informations sur le créateur)-->
+    <footer>
+        <div class="container">
+          <p>Copyright &copy; 2022 ThismaDuHood</p>
+          <ul>
+            <li><a href="./mention_legale.html#mention_l">Mentions légales</a></li>
+            <li><a href="./mention_legale.html#conditions_u">Conditions d'utilisation</a></li>
+            <li><a href="./mention_legale.html#politique_c">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+    </footer>   
+</html>
