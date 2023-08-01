@@ -1,4 +1,4 @@
-# ***PASSWORD GENERATOR***
+# ***Generateur de MDP***
 
 ## **Présentation / Description du projet**
 
