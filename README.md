@@ -1,9 +1,4 @@
 # ***Generateur de MDP***
-
-## **Présentation / Description du projet**
-
-Etant donnée le nombre de cyber-attaques visant à cracker les ***MDP*** des utilisateurs afin de voler leurs données. Je me suis dit que crée un générateur de mots de passe sécurisé serait une bonne idée de mini-projet. Cela permettra d'avoir des mots de passe dur qui bloqueront les ***attaques dictionnaire ou BruteForce*** mais aussi les méthodes d'***OSINT***. Liée a un ***gestionnaire de MDP***, les utilisateurs pourront stockés leurs mots de passes sécurisés sans avoir à ce soucier pour les retenir...
-
 ## **Objectifs**
 
 - Generer un mot de passe.
