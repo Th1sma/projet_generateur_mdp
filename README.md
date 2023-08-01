@@ -3,7 +3,6 @@
 
 - Generer un mot de passe.
 - Accès à certains reglages pour le mot de passe. 
-- Quelques fonctionnalités ***BONUS***.
 
 ## **ETAPE 1:**
 ### Explication du script Password Generator : 
