@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Password Generator</title>
-    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <!-- Insertion des styles CSS -->
-    <link href="style/style_generator.css" rel="stylesheet">
-    <!--logo fav-icon-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Générateur de MDP</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href="style/style_generator.css" rel="stylesheet" />
     <link rel="icon" type="image" href="./image/fav_icon.png" />
-</head>
-    <!-- Page HTML-->
-    <body>
-        <!--Titre + description-->
-        <h1> Générer votre mot de passe sécurisé</h1>
-        <p> Ce générateur permet de créer des mots de passe aléatoire et sécurisé.</p>
-        
-        <div class="generation-container">
-        <!--div contenue la zone d'affichage password + bouton de génération-->
-            <div class="affichage">
-                <input class="inputPassword" id = "nouveauPassword"/>
-                <button class="boutonGen" onclick="generateur()">Generer</button>
-            </div>
-            
-            <!-- conteneur de configuration-->
-            <div class="config-container">
-                <div class="style-range">
-                    <input type="range" id="taille" name="seuil"
-                        min="10" max="25">
-                    <label for="seuil">N° de lettre </label>
-                </div>
-                <div class="style-textAa">
-                    <input type="checkbox" id="min">
-                    <label for="lowercase">Lettre minuscule</label></br>
-            
-                    <input type="checkbox" id="maj">
-                    <label for="uppercase">Lettre majuscule</label> 
-                </div>
-                <div class ="style-textCaract">
-                    <input type="checkbox" id="chiffre">
-                    <label for="numbers">Chiffre</label></br>
-            
-                    <input type="checkbox" id="symbole">
-                    <label for="symbols">Symbole</label>
-                </div>
-                <div class="bouton-container">
-                    <button id="boutonGenDef" onclick="parDefaut()">Génération automatique</button>
-                    <button id="boutonCopier" onclick="copie()">Copier le mot de passe</button>
-                </div>
-            </div>
+  </head>
+  <!-- CONTENUE DE PAGE -->
+  <body>
+    <header>
+      <h1>Générer votre mot de passe sécurisé</h1>
+    </header>
+    <main>
+      <div class="container">
+        <input id="nouveauPassword" />
+        <button onclick="generateur()">Nouveau MDP</button>
+      </div>
+      <div class="container-setting">
+        <div>
+          <input type="range" id="taille" name="seuil" min="10" max="25" />
+          <label for="seuil">N° de lettre </label>
         </div>
-        <script src='/js/script_generateur.js'></script>
-    </body>
-    <!--bas de page (contenant informations sur le créateur)-->
+        <div>
+          <input type="checkbox" id="min" />
+          <label for="lowercase">Lettre minuscule</label>
+          <input type="checkbox" id="maj" />
+          <label for="uppercase">Lettre majuscule</label>
+        </div>
+        <div>
+          <input type="checkbox" id="chiffre" />
+          <label for="numbers">Chiffre</label>
+
+          <input type="checkbox" id="symbole" />
+          <label for="symbols">Symbole</label>
+        </div>
+        <div>
+          <button onclick="parDefaut()">Génération automatique</button>
+          <button onclick="copie()">Copier le mot de passe</button>
+        </div>
+      </div>
+    </main>
     <footer>
-        <div class="container">
-          <p>Copyright &copy; 2022 Thisma17</p>
-        </div>
-    </footer>   
+      <div>
+        <p>Copyright &copy; 2022 Thisma17</p>
+      </div>
+    </footer>
+    <script src="/js/script_generateur.js"></script>
+  </body>
 </html>
