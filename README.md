@@ -108,4 +108,5 @@ Cette fonction est une fonction JavaScript qui permet à l'utilisateur de ***cop
 
 ----------------
 
-                                       FIN
+## Auteur
+Ce projet a été développé par Th1sma.
