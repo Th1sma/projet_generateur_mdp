@@ -17,7 +17,6 @@ Premierement j'ai crée plusieurs constantes :
 Ces constantes serviront pour les fonctions qui permettront de générer le MDP. 
 
 ------------------------------------
-------------------------------------
 <span style="color: #eee000">/!\ TOUTES LES FONCTIONS S'EXECUTENT LORSQUE L'UTILISATEUR CLIQUE SUR LEURS BOUTONS ASSOCIES DANS L'HTML.</span>
 
 ### La fonction ***generateur()*** : 
@@ -69,7 +68,6 @@ Cette boucle "***for***" fonctionne de la facon suivante :
 
 3. La constante initialisé plutot "***motDePasse***" récupere la valeur de la variable "***mdp***", grâce à l'instruction "***motDePasse.value = mdp;***". Cela permet d'afficher le mot de passe généré dans l'élément HTML correspondant.
 
-------------------------------------
 ------------------------------------
 
 ### La fonction **parDefault()**
