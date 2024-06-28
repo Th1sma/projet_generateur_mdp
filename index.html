@@ -23,20 +23,24 @@
                 <input type="range" id="taille" name="seuil" min="10" max="25">
             </div>
             <div class="setting-group">
-                <input type="checkbox" id="min">
-                <label for="min">Lettre minuscule</label>
+                <div>
+                    <input type="checkbox" id="min">
+                    <label for="min">Lettre minuscule</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="maj">
+                    <label for="maj">Lettre majuscule</label>
+                </div>
             </div>
             <div class="setting-group">
-                <input type="checkbox" id="maj">
-                <label for="maj">Lettre majuscule</label>
-            </div>
-            <div class="setting-group">
-                <input type="checkbox" id="chiffre">
-                <label for="chiffre">Chiffre</label>
-            </div>
-            <div class="setting-group">
-                <input type="checkbox" id="symbole">
-                <label for="symbole">Symbole</label>
+                <div>
+                    <input type="checkbox" id="chiffre">
+                    <label for="chiffre">Chiffre</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="symbole">
+                    <label for="symbole">Symbole</label>
+                </div>
             </div>
             <div class="button-group">
                 <button onclick="parDefaut()">Génération automatique</button>
