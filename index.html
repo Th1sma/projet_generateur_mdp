@@ -1,54 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de MDP</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link href="style/style_generator.css" rel="stylesheet" />
-    <link rel="icon" type="image" href="./image/fav_icon.png" />
-  </head>
-  <!-- CONTENUE DE PAGE -->
-  <body>
+    <link rel="stylesheet" href="style/style_generator.css">
+    <link rel="icon" type="image/png" href="./image/fav_icon.png">
+</head>
+<body>
     <header>
-      <h1>Générer votre mot de passe sécurisé</h1>
+        <h1>Générer votre mot de passe sécurisé</h1>
     </header>
     <main>
-      <div class="container">
-        <input id="nouveauPassword" />
-        <button onclick="generateur()">Nouveau MDP</button>
-      </div>
-      <div class="container-setting">
-        <div>
-          <input type="range" id="taille" name="seuil" min="10" max="25" />
-          <label for="seuil">N° de lettre </label>
+        <div class="container">
+            <input id="nouveauPassword" readonly placeholder="Votre mot de passe ici">
+            <button onclick="generateur()">Nouveau MDP</button>
         </div>
-        <div>
-          <input type="checkbox" id="min" />
-          <label for="lowercase">Lettre minuscule</label>
-          <input type="checkbox" id="maj" />
-          <label for="uppercase">Lettre majuscule</label>
+        <div class="container-setting">
+            <div>
+                <label for="taille">N° de lettre</label>
+                <input type="range" id="taille" name="seuil" min="10" max="25">
+            </div>
+            <div>
+                <input type="checkbox" id="min">
+                <label for="min">Lettre minuscule</label>
+                <input type="checkbox" id="maj">
+                <label for="maj">Lettre majuscule</label>
+            </div>
+            <div>
+                <input type="checkbox" id="chiffre">
+                <label for="chiffre">Chiffre</label>
+                <input type="checkbox" id="symbole">
+                <label for="symbole">Symbole</label>
+            </div>
+            <div>
+                <button onclick="parDefaut()">Génération automatique</button>
+                <button onclick="copie()">Copier le mot de passe</button>
+            </div>
         </div>
-        <div>
-          <input type="checkbox" id="chiffre" />
-          <label for="numbers">Chiffre</label>
-
-          <input type="checkbox" id="symbole" />
-          <label for="symbols">Symbole</label>
-        </div>
-        <div>
-          <button onclick="parDefaut()">Génération automatique</button>
-          <button onclick="copie()">Copier le mot de passe</button>
-        </div>
-      </div>
     </main>
     <footer>
-      <div>
-        <p>Copyright &copy; 2022 Thisma17</p>
-      </div>
+        <p>&copy; 2022 Thisma17</p>
     </footer>
     <script src="/js/script_generateur.js"></script>
-  </body>
+</body>
 </html>
