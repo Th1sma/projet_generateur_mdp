@@ -61,38 +61,8 @@ main {
 }
 
 .container-setting input[type="range"] {
-    -webkit-appearance: none;
     width: 100%;
-    height: 8px;
-    background: #ddd;
-    outline: none;
-    opacity: 0.9;
-    transition: opacity 0.2s;
     margin: 0.5rem 0;
-}
-
-.container-setting input[type="range"]:hover {
-    opacity: 1;
-}
-
-.container-setting input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    background: #333;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 0.3s ease;
-}
-
-.container-setting input[type="range"]::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
-    background: #333;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 0.3s ease;
 }
 
 button {
@@ -115,4 +85,14 @@ footer {
     text-align: center;
     padding: 1rem 0;
     border-top: 1px solid #ddd;
+}
+
+.setting-group > div {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.setting-group > div:last-child {
+    margin-right: 0;
 }
