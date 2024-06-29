@@ -1,70 +1,92 @@
 // -- Constante contenant les lettres (maj / min), symboles et chiffres -- //
-const motDePasse =  document.getElementById('nouveauPassword');
+const password =  document.getElementById('nouveauPassword');
 const tableauMinuscule = ["a","z","e","r","t","y","u","i","o","p","q","s","d","f","g","h","j","k","l","m","w","x","c","v","b","n"];
 const tableauMaj = ["A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"];
 const tableauNumero = [1,2,3,4,5,6,7,8,9,0];
 const tableauSymbole=["$","%","^","&","!","@","#",":",";","'",",",".",">","/","*","-",",","|","?","~","_","=","+"];
 
 // -- Fonction qui génere le mot de passe -- //
-function generateur(){
-	
+function generatePassword(){
+    
     // Verif des checkbox activé
     const tableauxRegroupé = [].concat(
         min.checked ? tableauMinuscule : [],    
         maj.checked ? tableauMaj : [],
         chiffre.checked ? tableauNumero : [],
         symbole.checked ? tableauSymbole : []);
-	
-    var passwordLength = parseInt(document.getElementById('taille').value);
+    
+    var passwordLength = parseInt(document.getElementById('lenght-password-value').value);
     var mdp = ''; 
     
-    // -- verif nombre de caractère minimum OK -- //
-    if (tableauxRegroupé.length<1 && passwordLength< 12){
-
-        alert('Tu dois séléctionner au moins un critère');
-	    alert('Le minimum est de 10 caractères');
-	  
-    }else if (tableauxRegroupé.length>=1 && passwordLength< 12){
-   
-        alert('Le minimum est de 10 caractères');
-        
     // -- si l'utilisateur saisi aucun critère -- //
-    }else if (tableauxRegroupé.length<1 && passwordLength>= 12){
+    if (tableauxRegroupé.length<1 && passwordLength>= 12){
    
-	    alert('Tu dois séléctionner au moins un critère');
+        alert('Tu dois séléctionner au moins un critère');
     
     }else{
 
-	    for(i = 0; i < passwordLength; i++){
+        for(i = 0; i < passwordLength; i++){
 
-		    mdp+= tableauxRegroupé[Math.floor(Math.random() * tableauxRegroupé.length)]; 
-	    }
+            mdp+= tableauxRegroupé[Math.floor(Math.random() * tableauxRegroupé.length)]; 
+        }
 
-    motDePasse.value = mdp; 
-
+        password.value = mdp; 
+        evaluatePasswordStrength(mdp);
     }
 }
 
-// -- Fonction permettant de copier le mot de passe -- //
-function copie(){
-	 
-	if (document.getElementById('nouveauPassword').value==0) {
-		 
-		alert('Case vide , il n y a rien à copier')
-	}else {
-        motDePasse.select();
+/**
+ * @function copy
+ * @notes Copie du mot de passe généré
+ */
+function copy(){
+     
+    if (document.getElementById('nouveauPassword').value==0) {
+         
+        alert('Case vide , il n y a rien à copier')
+    }else {
+        password.select();
         document.execCommand('copy');
         alert('Copié')
     }
 }
-// -- Création d'un mot de passe par défaut -- //
-function parDefaut() {
 
-    document.getElementById('taille').value="18";
-	document.getElementById('min').checked =true;
-	document.getElementById('maj').checked =true;
-	document.getElementById('chiffre').checked =true;
-	document.getElementById('symbole').checked =true;
-	
-    generateur();
+/**
+ * @function evaluatePasswordStrength
+ * @param {string} password - Le mot de passe à évaluer
+ * @notes Évalue la force du mot de passe et met à jour l'indicateur visuel et le texte correspondant.
+ */
+function evaluatePasswordStrength(password) {
+    const indicator = document.getElementById('strength-indicator');
+    const strengthText = document.getElementById('strength-text');
+    const length = password.length;
+    const hasLowercase = /[a-z]/.test(password);
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasNumber = /\d/.test(password);
+    const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    let strength = 0;
+
+    if (length >= 12) strength++;
+    if (length >= 16) strength++;
+    if (hasLowercase) strength++;
+    if (hasUppercase) strength++;
+    if (hasNumber) strength++;
+    if (hasSymbol) strength++;
+
+    let strengthPercentage = (strength / 6) * 100;
+    indicator.style.left = `${strengthPercentage}%`;
+
+    if (strength < 2) {
+        strengthText.textContent = "very weak";
+    } else if (strength < 3) {
+        strengthText.textContent = "weak";
+    } else if (strength < 4) {
+        strengthText.textContent = "medium";
+    } else if (strength < 5){
+        strengthText.textContent = "strong";
+    } else if (strength > 5){
+        strengthText.textContent = "very strong";
+    } 
 }
+

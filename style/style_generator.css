@@ -6,7 +6,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: #f4f4f9;
-    color: #333;
 }
 
 header {
@@ -25,6 +24,7 @@ main {
     padding: 2rem;
 }
 
+/*CONFIGURATION DU CONTAINER GENERATION*/
 .container, .container-setting {
     background: white;
     padding: 2rem;
@@ -36,17 +36,44 @@ main {
 }
 
 .container input, .container-setting input[type="range"], .container-setting input[type="checkbox"] {
-    width: calc(100% - 2rem);
+    width: calc(100% - 1.1rem);
     padding: 0.5rem;
     margin: 0.5rem 0;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.container-setting label {
-    margin-left: 0.5rem;
+#password-strength {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
 }
 
+#strength-bar {
+    width: 65%; 
+    height: 10px; 
+    background: linear-gradient(to right, red, orange, yellow, green); 
+    border-radius: 5px; 
+    overflow: hidden; 
+    position: relative; 
+    margin-left: auto;
+}
+
+#strength-indicator {
+    width: 5px; 
+    height: 20px; 
+    background-color: #333; 
+    position: absolute; 
+    top: -5px; 
+    transition: left 0.3s ease-in-out; 
+}
+
+#strength-text {
+    margin-right: 0.2rem;
+    font-weight: bold; 
+}
+
+/*CONFIGURATION DU CONTAINER SETTINGS*/
 .container-setting .setting-group {
     display: flex;
     align-items: center;
@@ -61,16 +88,15 @@ main {
 }
 
 .container-setting input[type="range"] {
-    width: 100%;
-    margin: 0.5rem 0;
+    width: 100%
 }
 
 button {
+    width: 100%;
     background: #333;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
-    margin: 0.5rem;
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s ease;
@@ -85,14 +111,4 @@ footer {
     text-align: center;
     padding: 1rem 0;
     border-top: 1px solid #ddd;
-}
-
-.setting-group > div {
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
-}
-
-.setting-group > div:last-child {
-    margin-right: 0;
 }
