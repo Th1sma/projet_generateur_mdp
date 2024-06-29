@@ -1,25 +1,25 @@
 // -- Constante contenant les lettres (maj / min), symboles et chiffres -- //
 const password =  document.getElementById('nouveauPassword');
-const tableauMinuscule = ["a","z","e","r","t","y","u","i","o","p","q","s","d","f","g","h","j","k","l","m","w","x","c","v","b","n"];
-const tableauMaj = ["A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"];
-const tableauNumero = [1,2,3,4,5,6,7,8,9,0];
-const tableauSymbole=["$","%","^","&","!","@","#",":",";","'",",",".",">","/","*","-",",","|","?","~","_","=","+"];
+const lowercaseTab = ["a","z","e","r","t","y","u","i","o","p","q","s","d","f","g","h","j","k","l","m","w","x","c","v","b","n"];
+const uppercaseTab = ["A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"];
+const numberTab = [1,2,3,4,5,6,7,8,9,0];
+const symbolTab=["$","%","^","&","!","@","#",":",";","'",",",".",">","/","*","-",",","|","?","~","_","=","+"];
 
 // -- Fonction qui génere le mot de passe -- //
 function generatePassword(){
     
     // Verif des checkbox activé
-    const tableauxRegroupé = [].concat(
-        min.checked ? tableauMinuscule : [],    
-        maj.checked ? tableauMaj : [],
-        chiffre.checked ? tableauNumero : [],
-        symbole.checked ? tableauSymbole : []);
+    const tabGroup = [].concat(
+        min.checked ? lowercaseTab : [],    
+        maj.checked ? uppercaseTab : [],
+        chiffre.checked ? numberTab : [],
+        symbole.checked ? symbolTab : []);
     
     var passwordLength = parseInt(document.getElementById('lenght-password-value').value);
     var mdp = ''; 
     
     // -- si l'utilisateur saisi aucun critère -- //
-    if (tableauxRegroupé.length<1 && passwordLength>= 12){
+    if (tabGroup.length<1 && passwordLength>= 12){
    
         alert('Tu dois séléctionner au moins un critère');
     
@@ -27,7 +27,7 @@ function generatePassword(){
 
         for(i = 0; i < passwordLength; i++){
 
-            mdp+= tableauxRegroupé[Math.floor(Math.random() * tableauxRegroupé.length)]; 
+            mdp+= tabGroup[Math.floor(Math.random() * tabGroup.length)]; 
         }
 
         password.value = mdp; 
@@ -49,6 +49,14 @@ function copy(){
         document.execCommand('copy');
         alert('Copié')
     }
+}
+
+/**
+ * @function updateSliderValue
+ * @notes Affichage de la valeur selectionnée sur le slider
+ */
+function updateSliderValue(value) {
+    document.getElementById('lenght-password').textContent = `Password length : ${value} characters`;
 }
 
 /**
