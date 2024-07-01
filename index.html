@@ -21,29 +21,29 @@
             </div>
             <input id="nouveauPassword" readonly placeholder="Your password will display here...">
             <button onclick="copy()">Copy the password</button>
-        </div>              
+        </div>
+        
         <div class="container-setting">
             <div class="setting-group">
-                <label for="lenght-password-label"><span id="lenght-password">Password length: characters</span>
-                <input type="range" id="lenght-password-value" name="lenght-password-value" min="10" max="30" value="14" oninput="updateSliderValue(this.value)">
+                <label for="lenght-password-label">
+                    <span id="lenght-password">Password length: characters</span>
+                    <input type="range" id="lenght-password-value" name="lenght-password-value" min="10" max="30" value="14" oninput="updateSliderValue(this.value)">
                 </label>
             </div>
-            <div class="setting-group">
-                <div>
+            <div class="setting-group checkbox-group">
+                <div class="checkbox-item">
                     <input type="checkbox" id="min">
                     <label for="min">Lowercase</label>
                 </div>
-                <div>
+                <div class="checkbox-item">
                     <input type="checkbox" id="maj">
                     <label for="maj">Uppercase</label>
                 </div>
-            </div>
-            <div class="setting-group">
-                <div>
+                <div class="checkbox-item">
                     <input type="checkbox" id="chiffre">
                     <label for="chiffre">Number</label>
                 </div>
-                <div>
+                <div class="checkbox-item">
                     <input type="checkbox" id="symbole">
                     <label for="symbole">Symbol</label>
                 </div>

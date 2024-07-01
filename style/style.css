@@ -92,6 +92,21 @@ main {
     width: 100%
 }
 
+.container-setting .setting-group.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 5px;
+}
+
 button {
     width: 100%;
     background: #333;
