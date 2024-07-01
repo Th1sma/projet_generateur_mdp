@@ -84,18 +84,18 @@ main {
 }
 
 .setting-group input[type="checkbox"] {
-    width: auto;
+    width: 100%
+
     margin: 0;
 }
 
 .container-setting input[type="range"] {
-    width: 100%
+    width: 100%;
+    margin: 10px 0;
 }
 
 .container-setting .setting-group.checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    margin-bottom: 4%;
 }
 
 .checkbox-item {
